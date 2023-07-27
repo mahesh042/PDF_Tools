@@ -1,6 +1,7 @@
 import PyPDF2
 import tkinter as tk
 from tkinter import filedialog
+import tkinter.ttk as ttk
 
 def merge_pdfs(_pdfs, output_file):
     mergeFile = PyPDF2.PdfMerger()
@@ -44,13 +45,13 @@ def merge_pdfs_gui():
     file_list = tk.Listbox(root, selectmode=tk.MULTIPLE)
     file_list.pack(side=tk.TOP, fill=tk.X, padx=10, pady=10)
 
-    browse_button = tk.Button(root, text="Browse Files", command=browse_files)
+    browse_button = ttk.Button(root, text="Add Files", command=browse_files)
     browse_button.pack(side=tk.TOP, padx=10, pady=10)
 
-    delete_button = tk.Button(root, text="Delete File", command=delete_file)
+    delete_button = ttk.Button(root, text="Delete File", command=delete_file)
     delete_button.pack(pady=5)
     
-    merge_button = tk.Button(root, text="Merge Files", command=merge_files)
+    merge_button = ttk.Button(root, text="Click here to Merge the selected PDF Files", command=merge_files)
     merge_button.pack(side=tk.TOP, fill=tk.X, padx=10, pady=10)
 
     root.mainloop()
